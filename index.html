@@ -1,0 +1,163 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" conent="ie-edge">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="index.css">
+<title>Games Store</title>
+</head>
+
+<!--Nav Bar -->
+<body class="grey lighten-3">
+    <nav class="nav">
+          <ul class = "navigation">        
+          <li class= "logged-out" id ="signup-link" data-target="modal-signup"><a href="#">Sign Up</a></li>
+          <li class= "logged-out" id ="login-link" data-target="modal-login"><a href="#">Login</a></li>
+          <li class= "logged-in" id="addGame-link" data-target="modal-addGame"><a href="#">Add Game</a></li>
+          <li class= "logged-in" id ="logout-link"><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+
+      
+<img Id= "logo" src="imgs/logo.png"></img>  
+<div id="demo" class="logged-out">
+<p>If you don't want to make an account, feel free to use this test account</p>
+<p>Username: test@test.com</p>
+<p>Password: test1234</p>
+</div>
+
+ <div class="logged-in" id="gamesView">
+   <ul class="gameList">
+
+    
+   </ul>
+        
+      </div>
+      <!-- Sign Up Pop-up -->
+      <div id="modal-signup" class="modal">
+        
+        <div class="modal-content">
+          <a href="#"><div id="exit" class="exit"><i class="material-icons">close</i></a></div>
+          <div class="modal-header">
+          <p>Register Account</p>
+          </div>
+
+          <form id="register-form">
+            <div class="input-field">
+              <input class="entry" type="email" id="register-email" placeholder="Email address" required />
+            </div>
+
+            <div class="input-field">
+              <input class="entry" type="password" id="register-password" placeholder="Choose your password"required /> 
+            </div>
+            
+            <div class="modal-footer">
+           <a href="#"><button class="register">Register </button></a>
+            </div>
+            <p class="error"></p>
+          </form>
+        </div>
+      </div>
+
+ <!-- <Login> Pop-up -->
+ <div id="modal-login" class="modal">
+  <div class="modal-content">
+    <a href="#"><div id="exit" class="exit"><i class="material-icons">close</i></a></div>
+    <div class="modal-header">
+    <h4>Login</h4>
+    </div>
+
+    <form id="login-form">
+      <div class="input-field">
+        <input class="entry" type="email" id="login-email" placeholder="Email address" required />
+      </div>
+
+      <div class="input-field">
+        <input class="entry" type="password" id="login-password" placeholder="Enter your password"required /> 
+      </div>
+      
+      <div class="modal-footer">
+     <a href="#"><button class="login">Login </button></a>
+      </div>
+      <p class="error"></p>
+    </form>
+  </div>
+</div>
+
+
+<div id="modal-addGame" class="modal">
+  <div class="modal-content">
+    <a href="#"><div class="exit"><i class="material-icons">close</i></a></div>
+  <div class="modal-header">
+    <h4>Add New Game </h4>
+  </div>
+
+  <form id="newGame-form">
+    <div class="input-field">
+      <lablel id="gameNameI">Game Name<input id="name" type="text" placeholder="Enter Game Name" maxLength="24"></lablel><br>
+      <img id=game-img width="25%" height=auto ><br>
+      <label id="imagelink"><input id="imgUrl" type="text" placeholder="Paste your image url here"></label><br>
+      <button type="button" onclick="uploadImg()" id="game-image">Upload Image</button><br>
+      <textarea id="bio" placeholder="Enter description of title"></textarea><br>
+      <lable>Platform</lable>
+      <select name="platforms" id="platforms">
+        <option value="n64">Nintendo 64</option>
+        <option value="360">Xbox 360</option>
+        <!--
+        <option value="ps1">Playstation</option>
+        <option value="xbox">Xbox</option>
+        <option value="gc">Gamecube</option>
+        <option value="ps2">Playstation 2</option>
+        <option value="wii">Nintendo Wii</option>
+        <option value="ps3">Playstation 3</option>
+        <option value="wiiu">Wii U</option>
+        <option value="switch">Nintendo Switch</option>
+        <option value="ps4">Playstation 4</option>
+        <option value="one">Xbox One</option>
+        -->
+      
+      </select><br>
+      <label id="priceI">Price<input id="prices" type="number"></label><br><br>
+      <label><button type="submit">Add Game</button></label>
+    </div>
+  </form>
+</div>
+</div>
+
+    
+
+
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA_MMjdaYbII84y5swQ_Xk_5mmX66MV-Vg",
+    authDomain: "video-game-store-998ab.firebaseapp.com",
+    databaseURL: "https://video-game-store-998ab.firebaseio.com",
+    projectId: "video-game-store-998ab",
+    storageBucket: "video-game-store-998ab.appspot.com",
+    messagingSenderId: "962698141770",
+    appId: "1:962698141770:web:854a9ecb19a5acc72046b3"
+   
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ 
+  
+  //make references to firebase
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
+
+<!--Initializing scripts to be used on the page-->
+      <script src="index.js"></script>
+      <script src="auth.js"></script>
+</body>
+
+</html>
