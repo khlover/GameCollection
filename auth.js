@@ -32,6 +32,7 @@ addGame.addEventListener('submit',(e)=>{
         const modal = document.querySelector('#modal-addGame');
         addGame.reset();
         modal.style.display ="none";
+        location.reload();
     })
 })
 
