@@ -11,9 +11,8 @@
 
 ## Known issues
 * If you login to another user the first load will show their game list, disapears on refresh. 
-* When you add a game it will load all the previous games again.Fixed on refresh.
 * Sometimes the error catch doesn't trigger and the login box closes when user enters password incorrectly
 
 ## Future features
 * Utilize the existing remove buttons to allow the user to remove a game in site. 
-* Add a admin flag that can see all games
+* Add a admin user that can see all games
