@@ -8,11 +8,3 @@
 * User can Logout
 * Data will not load when logged out
 * Data is always clearly visible and laid out even on mobile devices of varying sizes.
-
-## Known issues
-* If you login to another user the first load will show their game list, disapears on refresh. 
-* Sometimes the error catch doesn't trigger and the login box closes when user enters password incorrectly
-
-## Future features
-* Utilize the existing remove buttons to allow the user to remove a game in site. 
-* Add a admin user that can see all games
