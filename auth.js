@@ -81,6 +81,7 @@ loginForm.addEventListener("submit", (e) => {
       const loginmodal = document.getElementById("modal-login");
       loginmodal.style.display = "none";
       loginForm.reset();
+      location.reload();
       loginForm.querySelector(".error").innerHTML = "";
     })
     .catch((err) => {
